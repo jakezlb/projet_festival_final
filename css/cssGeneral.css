@@ -1,0 +1,211 @@
+/* FEUILLE DE STYLES POUR TOUS LES STYLES DE L'APPLICATION SAUF LES MENUS */
+
+/* Style de base pour la page (couleur fond : ocre, couleur texte : noir) */
+.basePage 
+{
+    background-color:white;
+    color:black;
+    font:11px Arial, Helvetica, sans-serif;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+/* Style pour le titre (couleur du texte : rouge) */
+.titre 
+{
+    padding-top: 20px;
+    text-shadow: 1px 1px black;
+    color:whitesmoke;
+    text-align: center;
+    font:30px Arial, Helvetica, sans-serif;
+    border-bottom: black 2px solid;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+18,2989d8+50,1e5799+80,1e5799+80,1e5799+80&0+0,0.8+15,1+28,1+67,0.8+85,0+100 */
+    background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,0.85) 18%, rgba(33,103,173,1) 28%, rgba(41,137,216,1) 50%, rgba(35,109,180,1) 67%, rgba(30,87,153,0.86) 80%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,0.85) 18%,rgba(33,103,173,1) 28%,rgba(41,137,216,1) 50%,rgba(35,109,180,1) 67%,rgba(30,87,153,0.86) 80%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,0.85) 18%,rgba(33,103,173,1) 28%,rgba(41,137,216,1) 50%,rgba(35,109,180,1) 67%,rgba(30,87,153,0.86) 80%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=0 ); /* IE6-9 */
+
+}
+
+/* Style pour le texte de 2ème niveau du titre */
+.texteNiveau2
+{
+    font:20px Arial, Helvetica, sans-serif;
+}
+
+/* Style pour le texte associé à l'onglet Accueil (couleur : bleu foncé avec 
+mise en gras et en italique) */
+.texteAccueil
+{
+    background-color:white;
+    color:#000099;       
+    font:14px Georgia, "Times New Roman", Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    text-align:left;
+}
+
+/* Style pour le texte dans les différentes balises citées */
+td,tr,div,p 
+{
+    font:11px Arial, Helvetica, sans-serif;
+}
+
+/* STYLES POUR LES TABLEAUX QUADRILLÉS */
+
+/* Style des tableaux avec quadrillage : gris foncé épaisseur 1px, espacement de 
+3px entre la bordure gauche de chaque cellule et le texte */
+table.tabQuadrille td
+{
+    border-bottom:1px solid #777777;
+    border-right:1px solid #777777;
+    border-left:1px solid #777777;
+    border-top:1px #777777;
+    padding-left:3px;
+} 
+
+/* Style pour les lignes d'en-tête des tableaux quadrillés : fond avec nuances 
+de jaune */
+tr.enTeteTabQuad 
+{
+    border-top: 1px solid #777;
+    background-color:lightskyblue;
+    color:black;
+    height:21px;
+    text-align:center;
+} 
+
+/* 2ème style pour les en-têtes des tableaux quadrillés : fond jaune */
+tr.enTete2TabQuad 
+{
+    background-color:#FFFFC0;
+    color:black;
+    text-align:left;
+} 
+
+/* Style pour les lignes (autres que les en-têtes) des tableaux quadrillés : 
+fond écru */
+tr.ligneTabQuad 
+{
+    background-color:#FFFFE0;
+    color:black;
+    text-align:left;
+}
+
+/* STYLES POUR LES TABLEAUX NON QUADRILLÉS */
+
+/* Style des tableaux sans quadrillage : gris foncé épaisseur 1px, fond écru */
+table.tabNonQuadrille 
+{
+    background-color:#FFFFC0;
+    color:black;
+    border-bottom:1px solid #777777;
+    border-right:1px solid #777777;
+    border-left:1px solid #777777;
+    border-top:1px #777777;
+}
+
+/* Style pour les lignes d'en-tête des tableaux non quadrillés : fond avec 
+nuances de jaune et trait bas pour séparer l'en-tête du corps du tableau */
+tr.enTeteTabNonQuad td
+{
+    background-color:lightskyblue;
+    color:black;
+    height:21px;
+    text-align:center;
+    border-bottom:1px solid #777777;
+    border-top: 1px solid #777;
+} 
+
+/* Style pour les lignes (autres que les en-têtes) des tableaux non quadrillés : 
+fond écru, hauteur plus importante et espacement de 3px entre la bordure gauche 
+de chaque cellule et le texte */
+tr.ligneTabNonQuad td
+{
+    background-color:white;
+    color:black;
+    text-align:left;
+    height:28px;
+    padding-left:3px;
+} 
+
+/* STYLES POUR LES ERREURS */
+
+/* Style pour les messages d'erreur affichés en bas de page (couleur : bleu) */
+.msgErreur
+{
+    background-color:#FFDD88;
+    color:#3366CC;
+    font-size:14px;
+}
+
+/* Style pour les erreurs de saisie dans les tableaux d'offres d'hébergement 
+(couleur : rouge de base) */
+.erreur
+{
+    background-color:white;
+    color:#FF0000;
+}
+
+/* STYLES POUR LES ATTRIBUTIONS */
+
+/* Fond gris */
+td.absenceOffre
+{
+    background-color:#EEEEEE;
+    color:black;
+    width:30px;
+    text-align:center;
+}
+
+/* Fond blanc */
+td.reserveSiLien
+{
+    background-color:#FFFFFF;
+    color:black;
+    width:30px;
+    text-align:center;
+}
+
+/* Fond jaune */
+td.reserve
+{
+    background-color:#FFFF80;
+    color:black;
+    width:30px;
+    text-align:center;
+}
+
+/* Fond vert */
+td.libre
+{
+    background-color:#99FFCC;
+    color:black;
+    width:30px;
+    text-align:center;
+}
