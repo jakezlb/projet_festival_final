@@ -24,6 +24,7 @@
    /* Bordure blanche */
    border:solid 2px white;
    font-size: medium;
+   text-shadow: 1px 1px black;
    /* Logiquement, le pourcentage devrait être égal à 100/nombre d'onglets 
    mais les bordures prennent de la place ; il faut donc réduire à 18% 
    certains navigateurs n'acceptent pas les nombres réels donc on met
@@ -51,6 +52,7 @@
    border-left:solid 2px black;
    width:20%;
    font-size: medium;
+   text-shadow: 1px 1px black;
 }
 
 /* Style de l'onglet non ouvert cas 1er onglet */
@@ -61,6 +63,7 @@
    /* Couleur rouge */
    color:#F50033;
    font-size: medium;
+   text-shadow: 1px 1px black;
    margin:0px 0px 0px 0px;
 }
 
@@ -70,7 +73,7 @@
    /* Fond ocre */
    /* Couleur rouge */
    color:white;
-   box-shadow: 5px black;
+   text-shadow: 1px 1px black;
    font-size: medium;
    /* Pas de soulignement du lien */
    text-decoration:none;
@@ -86,6 +89,7 @@
    font-style: bold;
    margin:0px 0px 0px 0px;
    font-size: medium;
+   text-shadow: 1px 1px black;
    /* Effacement du trait de gauche (pour cela, on le met de la même couleur que 
    le fond de l'onglet) */
    border-left:solid 2px black;
