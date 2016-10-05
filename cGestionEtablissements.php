@@ -90,8 +90,6 @@ switch ($action) {
 Bdd::deconnecter();
 
 function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable) {
-    $chaineInterdite = Array("/", ",", ".", "@","%",";","^",":","_");
-    $pos = strpos($nom, $chaineInterdite);
     if ($id == "" || $nom == "" || $adresseRue == "" || $codePostal == "" ||
             $ville == "" || $tel == "" || $nomResponsable == "") {
         ajouterErreur('Chaque champ suivi du caractère * est obligatoire');
@@ -107,10 +105,6 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
                 ajouterErreur("L'établissement $id existe déjà");
             }
         }
-    }
-    
-    if($pos === true){
-        ajouterErreur("Nom ne peut pas avoir des caractéres speciaux!");
     }
     
     if ($nom != "" && EtablissementDAO::isAnExistingName(true, $id, $nom)) {

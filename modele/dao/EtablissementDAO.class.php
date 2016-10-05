@@ -46,7 +46,7 @@ class EtablissementDAO implements IDAO {
         $stmt->bindValue(':email', $objetMetier->getEmail());
         $stmt->bindValue(':type', $objetMetier->getTypeEtab());
         $stmt->bindValue(':civ', $objetMetier->getCiviliteResp());
-        $stmt->bindValue(':nomResp', $objetMetier->getNomResp());
+        $stmt->bindValue(':nomResp', strtoupper($objetMetier->getNomResp()));
         $stmt->bindValue(':prenomResp', $objetMetier->getPrenomResp());
     }
 
@@ -55,6 +55,9 @@ class EtablissementDAO implements IDAO {
      * @param Etablissement $objet objet métier à insérer
      * @return boolean =FALSE si l'opérationn échoue
      */
+    
+   
+    
     public static function insert($objet) {
         $requete = "INSERT INTO Etablissement VALUES (:id, :nom, :rue, :cdp, :ville, :tel, :email, :type, :civ, :nomResp, :prenomResp)";
         $stmt = Bdd::getPdo()->prepare($requete);
