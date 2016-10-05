@@ -109,12 +109,12 @@ echo '
       </tr>
       <tr class="ligneTabNonQuad">
          <td> Téléphone*: </td>
-         <td><input placeholder="Format 0123456789" type="tel" value="' . $tel . '" name="tel" size ="20" 
+         <td><input placeholder="Format 0123456789" type="text" value="' . $tel . '" name="tel" size ="20" 
          maxlength="10"></td>
       </tr>
       <tr class="ligneTabNonQuad">
          <td> E-mail: </td>
-         <td><input type="text" value="' . $adresseElectronique . '" name=
+         <td><input type="email" value="' . $adresseElectronique . '" name=
          "adresseElectronique" size ="75" maxlength="70"></td>
       </tr>
       <tr class="ligneTabNonQuad">
