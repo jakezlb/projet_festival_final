@@ -109,7 +109,7 @@ echo '
       </tr>
       <tr class="ligneTabNonQuad">
          <td> Téléphone*: </td>
-         <td><input type="text" value="' . $tel . '" name="tel" size ="20" 
+         <td><input type="text" placeholder="Exemple: 0123456789" value="' . $tel . '" name="tel" size ="20" 
          maxlength="10"></td>
       </tr>
       <tr class="ligneTabNonQuad">
