@@ -159,7 +159,7 @@ foreach ($lesGroupes as $unGroupe) {
                     $nbMax = $nbChLib + $nbOccupGroupe;
                     echo "
                      <td class='reserve'>
-                     <a class='btn' href='cAttributionChambres.php?action=donnerNbChambres&idEtab=$idEtab&idTypeChambre=$idTypeChambre&idGroupe=$idGroupe&nbChambres=$nbMax'>
+                     <a href='cAttributionChambres.php?action=donnerNbChambres&idEtab=$idEtab&idTypeChambre=$idTypeChambre&idGroupe=$idGroupe&nbChambres=$nbMax'>
                      $nbOccupGroupe</a></td>";
                 } else {
                     // Cas où il n'y a pas de chambres de ce type 
@@ -169,7 +169,7 @@ foreach ($lesGroupes as $unGroupe) {
                     if ($nbChLib != 0) {
                         echo "
                         <td class='reserveSiLien'>
-                        <a class='btn' href='cAttributionChambres.php?action=donnerNbChambres&idEtab=$idEtab&idTypeChambre=$idTypeChambre&idGroupe=$idGroupe&nbChambres=$nbChLib'>
+                        <a href='cAttributionChambres.php?action=donnerNbChambres&idEtab=$idEtab&idTypeChambre=$idTypeChambre&idGroupe=$idGroupe&nbChambres=$nbChLib'>
                         __</a></td>";
                     } else {
                         echo "<td class='reserveSiLien'>&nbsp;</td>";
@@ -196,7 +196,7 @@ echo "
       <td width='21%' align='left'>Nombre de places encore disponibles</td>
    </tr>
 </table>";
-echo "<br><center><a class='btn' href='cAttributionChambres.php'>Retour</a></center>";
+echo "<br><center><a href='cAttributionChambres.php'>Retour</a></center>";
 
 include("includes/_fin.inc.php");
 

@@ -15,7 +15,7 @@ $lesEtabOffrantChambres = EtablissementDAO::getAllOfferingRooms();
 $nbEtabOffrantChambres = count($lesEtabOffrantChambres);
 if ($nbEtabOffrantChambres != 0) {
     echo "
-   <center> <a class='btn' href='cAttributionChambres.php?action=demanderModifierAttrib'>
+   <center> <a href='cAttributionChambres.php?action=demanderModifierAttrib'>
    Effectuer ou modifier les attributions</a> <br> <br>";
 
     // POUR CHAQUE ÉTABLISSEMENT : AFFICHAGE D'UN TABLEAU COMPORTANT 2 LIGNES 

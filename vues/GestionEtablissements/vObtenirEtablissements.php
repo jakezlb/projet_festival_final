@@ -28,11 +28,11 @@ foreach ($lesEtablissements as $unEtablissement) {
          <td width='52%'>$nom</td>
          
          <td width='16%' align='center'> 
-         <a class='btn' href='cGestionEtablissements.php?action=detailEtab&id=$id'>
+         <a href='cGestionEtablissements.php?action=detailEtab&id=$id'>
          Voir détail</a></td>
          
          <td width='16%' align='center'> 
-         <a class='btn' href='cGestionEtablissements.php?action=demanderModifierEtab&id=$id'>
+         <a href='cGestionEtablissements.php?action=demanderModifierEtab&id=$id'>
          Modifier</a></td>";
 
     // S'il existe déjà des attributions pour l'établissement, il faudra
@@ -40,7 +40,7 @@ foreach ($lesEtablissements as $unEtablissement) {
     if (!existeAttributionsEtab($connexion, $id)) {
         echo "
             <td width='16%' align='center'> 
-            <a class='btn' href='cGestionEtablissements.php?action=demanderSupprimerEtab&id=$id'>
+            <a href='cGestionEtablissements.php?action=demanderSupprimerEtab&id=$id'>
             Supprimer</a></td>";
     } else {
         echo "
@@ -52,7 +52,7 @@ foreach ($lesEtablissements as $unEtablissement) {
 echo "
 </table>
 <br>
-<a class='btn' href='cGestionEtablissements.php?action=demanderCreerEtab'>
+<a href='cGestionEtablissements.php?action=demanderCreerEtab'>
 Création d'un établissement</a >";
 
 include("includes/_fin.inc.php");

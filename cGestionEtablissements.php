@@ -106,7 +106,6 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
             }
         }
     }
-    
     if ($nom != "" && EtablissementDAO::isAnExistingName(true, $id, $nom)) {
         ajouterErreur("L'établissement $nom existe déjà");
     }
