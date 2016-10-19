@@ -1,5 +1,7 @@
 <?php
-class Offre {
+namespace modele\metier;
+
+class Offre  {
     private $idEtab;
     private $idTypeChambre;
     private $nombreChambres;
