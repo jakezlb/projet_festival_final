@@ -2,9 +2,9 @@
 namespace modele\metier;
 
 class Offre  {
-    private $idEtab;
-    private $idTypeChambre;
-    private $nombreChambres;
+    private $idEtab; //type etablisement 
+    private $idTypeChambre; // type typechambre
+    private $nombreChambres; // type int
     
     public function __construct($idEtab, $idTypeChambre, $nombreChambres) {
         $this->idEtab = $idEtab;
