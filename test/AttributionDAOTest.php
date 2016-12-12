@@ -28,8 +28,8 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°1
         echo "<h3>Test getOneById</h3>";
         try {
-            $objet = AttributionDAO::getOneById2($idEtab, $idTypeChambre, $idGroupe);
-            var_dump($objet);
+            $getOne = AttributionDAO::getOneById2($idEtab, $idTypeChambre, $idGroupe);
+            var_dump($getOne);
         } catch (Exception $ex) {
             echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();
         }
