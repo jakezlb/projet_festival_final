@@ -20,7 +20,7 @@ class AttributionDAO implements IDAO {
     protected static function enregVersMetier($enreg) {
         $etablissement = EtablissementDAO::getOneById($enreg['IDETAB']);
         $typeChambre = TypeChambreDAO::getOneById($enreg['IDTYPECHAMBRE']);
-        $groupe = modele\dao\GroupeDAO::getOneById($enreg['IDGROUPE']);
+        $groupe = GroupeDAO::getOneById($enreg['IDGROUPE']);
         $nbChambres = $enreg['nbChambres'];
         $att = new Attribution($etablissement, $typeChambre, $nbChambres, $groupe);
         return $att;

@@ -14,7 +14,7 @@
         use modele\metier\Etablissement;
         use modele\metier\Groupe;
         use modele\metier\TypeChambre;
-
+        use modele\metier\Attribution;
 
 require_once __DIR__ . '/../includes/autoload.php';
 
@@ -23,15 +23,15 @@ require_once __DIR__ . '/../includes/autoload.php';
         $idGroupe = 'g004';
         Bdd::connecter();
 
-        echo "<h2>1- AttributionDAO</h2>";
+        echo "<h2>AttributionDAO</h2>";
 
         // Test n°1
-        echo "<h3>Test getOneById</h3>";
+        echo "<h3>1- getOneById</h3>";
         try {
             $getOne = AttributionDAO::getOneById2($idEtab, $idTypeChambre, $idGroupe);
             var_dump($getOne);
-        } catch (Exception $ex) {
-            echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();
+        } catch (Exception $e) {
+            echo "<h4>*** échec de la requête ***</h4>" . $e->getMessage();
         }
 
         // Test n°2
@@ -39,8 +39,8 @@ require_once __DIR__ . '/../includes/autoload.php';
         try {
             $lesObjets = AttributionDAO::getAll();
             var_dump($lesObjets);
-        } catch (Exception $ex) {
-            echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();
+        } catch (Exception $e) {
+            echo "<h4>*** échec de la requête ***</h4>" . $e->getMessage();
         }
 
         // Test n°3
