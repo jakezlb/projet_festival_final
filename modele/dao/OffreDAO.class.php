@@ -30,7 +30,7 @@ class OffreDAO implements IDAO {
     }
     public static function delete2($idEtab,$idTypeChambre) {
         $ok = false;
-        $requete = "DELETE FROM Offre WHERE idEtab = :idEtab AND idTypeChambre = :idTypeChambre";
+        $requete = "DELETE * FROM Offre WHERE idEtab = :idEtab AND idTypeChambre = :idTypeChambre";
         $stmt = Bdd::getPdo()->prepare($requete);
         $stmt->bindParam(':idEtab', $idEtab);
         $stmt->bindParam(':idTypeChambre', $idTypeChambre);

@@ -14,19 +14,21 @@
         use modele\metier\Etablissement;
         use modele\metier\Groupe;
         use modele\metier\TypeChambre;
-        
+
 
 require_once __DIR__ . '/../includes/autoload.php';
 
-        $id = '0352072M';
+        $idEtab = '0350773A';
+        $idTypeChambre = 'C2';
+        $idGroupe = 'g004';
         Bdd::connecter();
 
-        echo "<h2>1- EtablissementDAO</h2>";
+        echo "<h2>1- AttributionDAO</h2>";
 
         // Test n°1
         echo "<h3>Test getOneById</h3>";
         try {
-            $objet = EtablissementDAO::getOneById($id);
+            $objet = AttributionDAO::getOneById2($idEtab, $idTypeChambre, $idGroupe);
             var_dump($objet);
         } catch (Exception $ex) {
             echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();
@@ -35,7 +37,7 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°2
         echo "<h3>2- getAll</h3>";
         try {
-            $lesObjets = EtablissementDAO::getAll();
+            $lesObjets = AttributionDAO::getAll();
             var_dump($lesObjets);
         } catch (Exception $ex) {
             echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();
@@ -44,12 +46,17 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°3
         echo "<h3>3- insert</h3>";
         try {
-            $id = '9999999A';
-            $objet = new Etablissement($id, 'La Joliverie', '141 route de Clisson', '44230', 'Saint-Sébastien', '0240987456', 'contact@la-joliverie.com', 1, 'Monsieur', 'Bizet', 'Patrick');
-            $ok = EtablissementDAO::insert($objet);
+            $idEtab = '0359999A';
+            $idTypeChambre = 'C7';
+            $idGroupe = 'g015';
+            $objet1 = new Etablissement($idEtab, 'La Joliverie', '141 route de Clisson', '44230', 'Saint-Sébastien', '0240987456', 'contact@la-joliverie.com', 1, 'Monsieur', 'Bizet', 'Patrick');
+            $objet2 = new TypeChambre($idTypeChambre, 'Dortoir géant');
+            $objet3 = new Groupe($idGroupe, 'Pata', null, NULL, 10, 'France', False);
+            $objet4 = new Attribution($objet1, $objet2, 3, $objet3);
+            $ok = AttributionDAO::insert2($objet4);
             if ($ok) {
                 echo "<h4>ooo réussite de l'insertion ooo</h4>";
-                $objetLu = EtablissementDAO::getOneById($id);
+                $objetLu = AttributionDAO::getOneById2($idEtab, $idTypeChambre, $idGroupe);
                 var_dump($objetLu);
             } else {
                 echo "<h4>*** échec de l'insertion ***</h4>";
@@ -61,12 +68,18 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°3-bis
         echo "<h3>3- insert déjà présent</h3>";
         try {
-            $id = '9999999A';
-            $objet = new Etablissement($id, 'La Jol - bis', '141 route de Clisson aussi', '44230', 'Saint-Séb. bd', '0240987456', 'contact@la-joliverie.com', 1, 'Madame', 'Viard-Gaudin', 'Catherine');
-            $ok = EtablissementDAO::insert($objet);
+            $idEtab1 = '0359999A';
+            $idTypeChambre1 = 'C7';
+            $idGroupe1 = 'g015';
+            $objet11 = new Etablissement($idEtab1, 'La Joliverie', '141 route de Clisson', '44230', 'Saint-Sébastien', '0240987456', 'contact@la-joliverie.com', 1, 'Monsieur', 'Bizet', 'Patrick');
+            $objet21 = new TypeChambre($idTypeChambre1, 'Dortoir géant');
+            $objet31 = new Groupe($idGroupe1, 'Pata', null, NULL, 10, 'France', False);
+            $objet41 = new Attribution($objet11, $objet21, 3, $objet31);
+            $ok = AttributionDAO::insert2($objet41);
             if ($ok) {
                 echo "<h4>*** échec du test : l'insertion ne devrait pas réussir  ***</h4>";
-                $objetLu = Bdd::getOneById($id);
+                $objetLu = AttributionDAO::getOneById2($idEtab1, $idTypeChambre1, $idGroupe1);
+                //$objetLu = Bdd::getOneById2($id);
                 var_dump($objetLu);
             } else {
                 echo "<h4>ooo réussite du test : l'insertion a logiquement échoué ooo</h4>";
@@ -78,12 +91,13 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°4
         echo "<h3>4- update</h3>";
         try {
-            $objet->setCdp('44000');
-            $objet->setVille('Nantes');
-            $ok = EtablissementDAO::update($id, $objet);
+            $objet11->setCdp('44000');
+            $objet11->setVille('Nantes');
+            $objet21->setLibelle('Grand dortoir');
+            $ok = AttributionDAO::update2($idEtab1, $idTypeChambre1, $idGroupe1, $objet41);
             if ($ok) {
                 echo "<h4>ooo réussite de la mise à jour ooo</h4>";
-                $objetLu = EtablissementDAO::getOneById($id);
+                $objetLu = AttributionDAO::getOneById2($idEtab1, $idTypeChambre1, $idGroupe1);
                 var_dump($objetLu);
             } else {
                 echo "<h4>*** échec de la mise à jour ***</h4>";
@@ -95,58 +109,12 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°5
         echo "<h3>5- delete</h3>";
         try {
-            $ok = EtablissementDAO::delete($id);
+            $ok = AttributionDAO::delete2($idEtab, $idTypeChambre, $idGroupe);
 //            $ok = EtablissementDAO::delete("xxx");
             if ($ok) {
                 echo "<h4>ooo réussite de la suppression ooo</h4>";
             } else {
                 echo "<h4>*** échec de la suppression ***</h4>";
-            }
-        } catch (Exception $e) {
-            echo "<h4>*** échec de la requête ***</h4>" . $e->getMessage();
-        }
-
-        // Test n°6
-        echo "<h3>6- getAllOfferingRooms</h3>";
-        try {
-            $lesObjets = EtablissementDAO::getAllOfferingRooms();
-            var_dump($lesObjets);
-        } catch (Exception $ex) {
-            echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();
-        }
-
-        // Test n°7
-        echo "<h3>7- isAnExistingId</h3>";
-        try {
-            $id = "0352072M";
-            $ok = EtablissementDAO::isAnExistingId($id);
-            $ok = $ok && !EtablissementDAO::isAnExistingId('AZERTY');
-            if ($ok) {
-                echo "<h4>ooo test réussi ooo</h4>";
-            } else {
-                echo "<h4>*** échec du test ***</h4>";
-            }
-        } catch (Exception $e) {
-            echo "<h4>*** échec de la requête ***</h4>" . $e->getMessage();
-        }
-
-        // Test n°8
-        echo "<h3>7- isAnExistingName</h3>";
-        try {
-            // id et nom d'un établissement existant
-            $id = "0350785N";
-            $nom = "Collège de Moka";
-            $ok=true;
-            // en mode modification (1er paramètre = false)
-            $ok = EtablissementDAO::isAnExistingName(false, "0123456", $nom);
-            $ok = $ok && !EtablissementDAO::isAnExistingName(false, $id, $nom);
-            // en mode création (1er paramètre = true)
-            $ok = $ok && EtablissementDAO::isAnExistingName(true, "0123456", $nom);
-            $ok = $ok && !EtablissementDAO::isAnExistingName(true, "0123456", "Ecole");
-            if ($ok) {
-                echo "<h4>ooo test réussi ooo</h4>";
-            } else {
-                echo "<h4>*** échec du test ***</h4>";
             }
         } catch (Exception $e) {
             echo "<h4>*** échec de la requête ***</h4>" . $e->getMessage();
