@@ -5,7 +5,7 @@ namespace modele\dao;
 use modele\metier\Offre;
 use PDOStatement;
 use PDO;
-
+ 
 /**
  * Description of OffreDao
  * Classe métier  :  Offre
