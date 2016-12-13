@@ -94,16 +94,22 @@ class AttributionDAO implements IDAO {
     public static function update2($idEtab, $idTypeChambre, $idGroupe, $objet) {
         $ok = false;
         $requete = "UPDATE Attribution SET IDETAB = :idEtab, IDTYPECHAMBRE = :idTypeChambre, "
-                . "IDGROUPE = :idGroupe, NOMBRECHAMBRES = :nombreChambres WHERE IDETAB = :idEtab "
-                . "AND IDTYPECHAMBRE = :idTypeChambre AND IDGROUPE = :idGroupe";
+                . "IDGROUPE = :idGroupe, NOMBRECHAMBRES = :nombreChambres WHERE IDETAB = :idEtab2 "
+                . "AND IDTYPECHAMBRE = :idTypeChambre2 AND IDGROUPE = :idGroupe2";
         $stmt = Bdd::getPdo()->prepare($requete);
         self::metierVersEnreg($objet, $stmt);
-        $stmt->bindParam(':idEtab', $idEtab);
-        $stmt->bindParam(':idTypeChambre', $idTypeChambre);
-        $stmt->bindParam(':idGroupe', $idGroupe);
+        $stmt->bindParam(':idEtab2', $idEtab);
+        $stmt->bindParam(':idTypeChambre2', $idTypeChambre);
+        $stmt->bindParam(':idGroupe2', $idGroupe);
         $ok = $stmt->execute();
-        $ok = $ok && ($stmt->rowCount() > 0);
-        return $ok;
+        if ($stmt->rowCount() > 0){
+            $ok = true;
+            return $ok;
+        }else{
+            return $ok;
+        }
+//        $ok = $ok && ($stmt->rowCount() > 0);
+//        return $ok;
     }
 
 //put your code here
