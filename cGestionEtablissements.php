@@ -9,8 +9,8 @@ require_once __DIR__.'/includes/autoload.php';
 Bdd::connecter();
 
 include("includes/_gestionErreurs.inc.php");
-include("includes/gestionDonnees/_connexion.inc.php");
-include("includes/gestionDonnees/_gestionBaseFonctionsCommunes.inc.php");
+//include("includes/gestionDonnees/_connexion.inc.php");
+//include("includes/gestionDonnees/_gestionBaseFonctionsCommunes.inc.php");
 
 // 1ère étape (donc pas d'action choisie) : affichage du tableau des 
 // établissements 
@@ -65,7 +65,7 @@ switch ($action) {
         $prenomResponsable = $_REQUEST['prenomResponsable'];
 
         if ($action == 'validerCreerEtab') {
-            verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable);
+            verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable, $adresseElectronique);
             if (nbErreurs() == 0) {
                 $unEtab = new Etablissement($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
                 EtablissementDAO::insert($unEtab);
@@ -89,7 +89,7 @@ switch ($action) {
 // Fermeture de la connexion au serveur MySql
 Bdd::deconnecter();
 
-function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable) {
+function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable, $adresseElectronique) {
     if ($id == "" || $nom == "" || $adresseRue == "" || $codePostal == "" ||
             $ville == "" || $tel == "" || $nomResponsable == "") {
         ajouterErreur('Chaque champ suivi du caractère * est obligatoire');
@@ -106,11 +106,22 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
             }
         }
     }
-    if ($nom != "" && EtablissementDAO::isAnExistingName(true, $id, $nom)) {
+    if (!estLettres($nom)) {
+            ajouterErreur
+                    ("Le nom d'établissement doit comporter uniquement des lettres");
+        } else {
+            
+        if ($nom != "" && EtablissementDAO::isAnExistingName(true, $id, $nom)) {
         ajouterErreur("L'établissement $nom existe déjà");
+        }
     }
     if ($codePostal != "" && !estUnCp($codePostal)) {
         ajouterErreur('Le code postal doit comporter 5 chiffres');
+    }
+    
+    if (!filter_var($adresseElectronique, FILTER_VALIDATE_EMAIL)){
+        ajouterErreur('Le format de l\'adresse élèctronique n\'est pas valide');
+    
     }
 }
 

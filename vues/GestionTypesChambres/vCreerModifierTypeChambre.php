@@ -73,7 +73,7 @@ echo "
          </td>
       </tr>
    </table>
-   <a class='btn' href='cGestionTypesChambres.php'>Retour</a>
+   <a href='cGestionTypesChambres.php'>Retour</a>
 </form>";
 
 include("includes/_fin.inc.php");

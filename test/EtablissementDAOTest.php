@@ -18,10 +18,10 @@ require_once __DIR__ . '/../includes/autoload.php';
         $id = '0352072M';
         Bdd::connecter();
 
-        echo "<h2>EtablissementDAO</h2>";
+        echo "<h2>1- EtablissementDAO</h2>";
 
         // Test n°1
-        echo "<h3>1- getOneById</h3>";
+        echo "<h3>Test getOneById</h3>";
         try {
             $objet = EtablissementDAO::getOneById($id);
             var_dump($objet);

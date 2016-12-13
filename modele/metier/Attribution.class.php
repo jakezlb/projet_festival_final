@@ -1,58 +1,75 @@
 <?php
 namespace modele\metier;
 
-class Attribution  {
-    private $idGroupe; //type groupe 
-    private $idEtab; //type etablisement 
-    private $idTypeChambre; // type typechambre
-    private $nombreChambres; // type int
+/**
+ * Description of Attribution
+ *
+ * @author btssio
+ */
+class Attribution {
+    /**
+     * identifiant de l'établissement
+     * @var string
+     */
+    private $idEtab;
+    /**
+     * identifiant du type de chambre
+     * @var string
+     */
+    private $idTypeChambre;
+    /**
+     * identifiant du groupe 
+     * @var string
+     */
+    private $idGroupe;
+    /**
+     * nombre de chambres attribuées
+     * @var int
+     */
+    private $nbChambres;
     
-    public function __construct($idEtab, $idTypeChambre, $idGroupe, $nombreChambres) {
-        $this->idGroupe = $idGroupe;
+    
+    function __construct($idEtab, $idTypeChambre,$idGroupe, $nbChambres) {
         $this->idEtab = $idEtab;
         $this->idTypeChambre = $idTypeChambre;
-        $this->nombreChambres = $nombreChambres;
+        $this->idGroupe = $idGroupe;
+        $this->nbChambres = $nbChambres;
     }
     
     function getIdEtab() {
         return $this->idEtab;
-    }
-    
-    function getIdGroupe() {
-        return $this->idGroupe;
     }
 
     function getIdTypeChambre() {
         return $this->idTypeChambre;
     }
 
-    function getNombreChambres() {
-        return $this->nombreChambres;
+    function getIdGroupe() {
+        return $this->idGroupe;
+    }
+
+    function getNbChambres() {
+        return $this->nbChambres;
     }
 
     function setIdEtab($idEtab) {
         $this->idEtab = $idEtab;
-    }
-    
-    function setIdGroupe($idGroupe) {
-        $this->idEtab = $idGroupe;
     }
 
     function setIdTypeChambre($idTypeChambre) {
         $this->idTypeChambre = $idTypeChambre;
     }
 
-    function setNombreChambres($nombreChambres) {
-        $this->nombreChambres = $nombreChambres;
+    function setIdGroupe($idGroupe) {
+        $this->idGroupe = $idGroupe;
+    }
+
+    function setNbChambres($nbChambres) {
+        $this->nbChambres = $nbChambres;
     }
 
 
-    
+   
+
+
 }
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-

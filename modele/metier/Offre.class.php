@@ -1,40 +1,61 @@
 <?php
 namespace modele\metier;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-class Offre  {
-    private $idEtab; //type etablisement 
-    private $idTypeChambre; // type typechambre
-    private $nombreChambres; // type int
+/**
+ * Description of Offre
+ *
+ * @author btssio
+ */
+class Offre {
+     /**
+     * identifiant de l'établissement
+     * @var string
+     */
+    private $idEtab;
+     /**
+     * type de chambre
+     * @var string
+     */
+    private $typeChambre;
+     /**
+     * nombre de chambres
+     * @var int
+     */
+    private $nbChambres;
     
-    public function __construct($idEtab, $idTypeChambre, $nombreChambres) {
+    
+    function __construct($idEtab, $typeChambre, $nbChambres) {
         $this->idEtab = $idEtab;
-        $this->idTypeChambre = $idTypeChambre;
-        $this->nombreChambres = $nombreChambres;
+        $this->typeChambre = $typeChambre;
+        $this->nbChambres = $nbChambres;
     }
     function getIdEtab() {
         return $this->idEtab;
     }
 
-    function getIdTypeChambre() {
-        return $this->idTypeChambre;
+    function getTypeChambre() {
+        return $this->typeChambre;
     }
-
-    function getNombreChambres() {
-        return $this->nombreChambres;
+    
+     function getNbChambres() {
+        return $this->nbChambres;
     }
 
     function setIdEtab($idEtab) {
         $this->idEtab = $idEtab;
     }
 
-    function setIdTypeChambre($idTypeChambre) {
-        $this->idTypeChambre = $idTypeChambre;
+    function setTypeChambre($typeChambre) {
+        $this->typeChambre = $typeChambre;
     }
-
-    function setNombreChambres($nombreChambres) {
-        $this->nombreChambres = $nombreChambres;
-    }
-
-
     
+    function setNbChambres($nbChambres) {
+        $this->nbChambres = $nbChambres;
+    }
+
 }

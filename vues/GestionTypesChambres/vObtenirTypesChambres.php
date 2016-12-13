@@ -1,5 +1,6 @@
 <?php
 use modele\dao\TypeChambreDAO;
+use modele\dao\AttributionDAO;
 use modele\dao\Bdd;
 require_once __DIR__ . '/../../includes/autoload.php';
 
@@ -28,15 +29,15 @@ foreach ($lesTypesChambres as $unTypeChambre) {
          <td width='33%'>$libelle</td>
          <td width='26%' align='center'>
          
-         <a class='btn' href='cGestionTypesChambres.php?action=demanderModifierTypeChambre&id=$id'>
+         <a href='cGestionTypesChambres.php?action=demanderModifierTypeChambre&id=$id'>
          Modifier</a></td>";
 
     // S'il existe déjà des attributions pour le type de chambre, il faudra
     // d'abord les supprimer avant de pouvoir supprimer le type de chambre
-    if (!existeAttributionsTypeChambre($connexion, $id)) {
+    if (!AttributionDAO::existeAttributionsTypeChambre($id)) {
         echo "
             <td width='26%' align='center'>
-            <a class='btn' href='cGestionTypesChambres.php?action=demanderSupprimerTypeChambre&id=$id'>
+            <a href='cGestionTypesChambres.php?action=demanderSupprimerTypeChambre&id=$id'>
             Supprimer</a></td>";
     } else {
         echo "<td width='26%'>&nbsp; </td>";
@@ -46,7 +47,7 @@ foreach ($lesTypesChambres as $unTypeChambre) {
 }
 echo "    
 </table><br>
-<a class='btn' href='cGestionTypesChambres.php?action=demanderCreerTypeChambre'>
+<a href='cGestionTypesChambres.php?action=demanderCreerTypeChambre'>
 Création d'un type de chambre</a>";
 
 include("includes/_fin.inc.php");
