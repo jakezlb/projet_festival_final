@@ -2,12 +2,12 @@
 namespace modele\metier;
 
 class Attribution  {
-    private $idGroupe; //type etablisement 
+    private $idGroupe; //type groupe 
     private $idEtab; //type etablisement 
     private $idTypeChambre; // type typechambre
     private $nombreChambres; // type int
     
-    public function __construct($idEtab, $idTypeChambre, $nombreChambres, $idGroupe) {
+    public function __construct($idEtab, $idTypeChambre, $idGroupe, $nombreChambres) {
         $this->idGroupe = $idGroupe;
         $this->idEtab = $idEtab;
         $this->idTypeChambre = $idTypeChambre;

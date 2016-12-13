@@ -46,13 +46,13 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°3
         echo "<h3>3- insert</h3>";
         try {
-            $idEtab = '0359999A';
-            $idTypeChambre = 'C7';
+            $idEtab = '0350773A';
+            $idTypeChambre = 'C2';
             $idGroupe = 'g015';
             $objet1 = new Etablissement($idEtab, 'La Joliverie', '141 route de Clisson', '44230', 'Saint-Sébastien', '0240987456', 'contact@la-joliverie.com', 1, 'Monsieur', 'Bizet', 'Patrick');
             $objet2 = new TypeChambre($idTypeChambre, 'Dortoir géant');
             $objet3 = new Groupe($idGroupe, 'Pata', null, NULL, 10, 'France', False);
-            $objet4 = new Attribution($objet1, $objet2, 3, $objet3);
+            $objet4 = new Attribution($objet1, $objet2, $objet3, 3);
             $ok = AttributionDAO::insert2($objet4);
             if ($ok) {
                 echo "<h4>ooo réussite de l'insertion ooo</h4>";
@@ -68,13 +68,13 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°3-bis
         echo "<h3>3- insert déjà présent</h3>";
         try {
-            $idEtab1 = '0359999A';
-            $idTypeChambre1 = 'C7';
+            $idEtab1 = '0350773A';
+            $idTypeChambre1 = 'C2';
             $idGroupe1 = 'g015';
             $objet11 = new Etablissement($idEtab1, 'La Joliverie', '141 route de Clisson', '44230', 'Saint-Sébastien', '0240987456', 'contact@la-joliverie.com', 1, 'Monsieur', 'Bizet', 'Patrick');
             $objet21 = new TypeChambre($idTypeChambre1, 'Dortoir géant');
             $objet31 = new Groupe($idGroupe1, 'Pata', null, NULL, 10, 'France', False);
-            $objet41 = new Attribution($objet11, $objet21, 3, $objet31);
+            $objet41 = new Attribution($objet11, $objet21, $objet31, 3);
             $ok = AttributionDAO::insert2($objet41);
             if ($ok) {
                 echo "<h4>*** échec du test : l'insertion ne devrait pas réussir  ***</h4>";
@@ -109,6 +109,7 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°5
         echo "<h3>5- delete</h3>";
         try {
+            
             $ok = AttributionDAO::delete2($idEtab, $idTypeChambre, $idGroupe);
 //            $ok = EtablissementDAO::delete("xxx");
             if ($ok) {

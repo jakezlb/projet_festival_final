@@ -21,7 +21,7 @@ class AttributionDAO implements IDAO {
         $etablissement = EtablissementDAO::getOneById($enreg['IDETAB']);
         $typeChambre = TypeChambreDAO::getOneById($enreg['IDTYPECHAMBRE']);
         $groupe = GroupeDAO::getOneById($enreg['IDGROUPE']);
-        $nbChambres = $enreg['nbChambres'];
+        $nbChambres = $enreg['NOMBRECHAMBRES'];
         $att = new Attribution($etablissement, $typeChambre, $nbChambres, $groupe);
         return $att;
     }
@@ -32,7 +32,7 @@ class AttributionDAO implements IDAO {
 
     public static function delete2($idEtab, $idTypeChambre, $idGroupe) {
         $ok = false;
-        $requete = "DELETE * FROM Attribution WHERE idEtab = :idEtab AND idTypeChambre = :idTypeChambre AND idGroupe = :idGroupe";
+        $requete = "DELETE FROM Attribution WHERE idEtab = :idEtab AND idTypeChambre = :idTypeChambre AND idGroupe = :idGroupe";
         $stmt = Bdd::getPdo()->prepare($requete);
         $stmt->bindParam(':idEtab', $idEtab);
         $stmt->bindParam(':idTypeChambre', $idTypeChambre);
@@ -93,10 +93,12 @@ class AttributionDAO implements IDAO {
 
     public static function update2($idEtab, $idTypeChambre, $idGroupe, $objet) {
         $ok = false;
-        $requete = "UPDATE Attribution SET NOMBRECHAMBRES = :nombreChambres,  IDETAB = :id, IDTYPECHAMBRE = :idTypeChambre WHERE idEtab = :id AND idTypeChambre = :idTypeChambre AND idGroupe = :idGroupe";
+        $requete = "UPDATE Attribution SET IDETAB = :idEtab, IDTYPECHAMBRE = :idTypeChambre, "
+                . "IDGROUPE = :idGroupe, NOMBRECHAMBRES = :nombreChambres WHERE IDETAB = :idEtab "
+                . "AND IDTYPECHAMBRE = :idTypeChambre AND IDGROUPE = :idGroupe";
         $stmt = Bdd::getPdo()->prepare($requete);
         self::metierVersEnreg($objet, $stmt);
-        $stmt->bindParam(':id', $idEtab);
+        $stmt->bindParam(':idEtab', $idEtab);
         $stmt->bindParam(':idTypeChambre', $idTypeChambre);
         $stmt->bindParam(':idGroupe', $idGroupe);
         $ok = $stmt->execute();

@@ -14,6 +14,8 @@
         use modele\metier\Offre;
         use modele\metier\Etablissement;
         use modele\metier\TypeChambre;
+        use modele\dao\EtablissementDAO;
+        use modele\dao\TypeChambreDAO;
 
 require_once __DIR__ . '/../includes/autoload.php';
 
@@ -47,10 +49,10 @@ require_once __DIR__ . '/../includes/autoload.php';
             $idEtab2 = '0350777A';
             $objet11 = new Etablissement('0350777A', 'La Joliverie', '141 route de Clisson', '44230', 'Saint-Sébastien', '0240987456', 'contact@la-joliverie.com', 1, 'Monsieur', 'Bizet', 'Patrick');
             $objet22 = new TypeChambre('C7', 'Dortoir géant');
-            \modele\dao\EtablissementDAO::insert($objet11);
-            modele\dao\TypeChambreDAO::insert($objet22);
+            EtablissementDAO::insert($objet11);
+            TypeChambreDAO::insert($objet22);
             $idTC2 = 'C7';
-            $nbC = 150;
+            $nbC = 15;
             $objet = new Offre($objet11, $objet22, $nbC);
             $ok = OffreDAO::insert2($objet);
             if ($ok) {
@@ -69,6 +71,7 @@ require_once __DIR__ . '/../includes/autoload.php';
         try {
             $id = '0350777A';
             $idtc = 'C7';
+            $nbC = 15;
             $objet = new Offre($objet11,$objet22,$nbC);
             $ok = OffreDAO::insert2($objet);
             if ($ok) {
@@ -99,13 +102,14 @@ require_once __DIR__ . '/../includes/autoload.php';
         } catch (Exception $e) {
             echo "<h4>*** échec de la requête ***</h4>" . $e->getMessage();
         }
-
+        
         // Test n°5
         echo "<h3>5- delete</h3>";
         try {
+            
             $ok = OffreDAO::delete2($id,$idtc);
-            $ok1 = modele\dao\EtablissementDAO::delete($objet11->getId());
-            $ok2 = modele\dao\TypeChambreDAO::delete($objet22->getId());
+            $ok1 = EtablissementDAO::delete($objet11->getId());
+            $ok2 = TypeChambreDAO::delete($objet22->getId());
 //          $ok = EtablissementDAO::delete("xxx");
             if ($ok && $ok1 && $ok2) {
                 echo "<h4>ooo réussite de la suppression ooo</h4>";

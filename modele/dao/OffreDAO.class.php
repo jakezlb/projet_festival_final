@@ -18,7 +18,7 @@ class OffreDAO implements IDAO {
         return $offre;
         
     }
-   protected static function metierVersEnreg($objetMetier, $stmt) {
+    protected static function metierVersEnreg($objetMetier, $stmt) {
         // On utilise bindValue plutôt que bindParam pour éviter des variables intermédiaires
         $stmt->bindValue(':idEtab', $objetMetier->getIdEtab()->getId());
         $stmt->bindValue(':idTypeChambre', $objetMetier->getIdTypeChambre()->getId());
@@ -26,11 +26,17 @@ class OffreDAO implements IDAO {
     }
     
     public static function delete($id) {
-       
+       $ok = false;
+        $requete = "DELETE FROM Offre WHERE idEtab = :idEtab";
+        $stmt = Bdd::getPdo()->prepare($requete);
+        $stmt->bindParam(':idEtab', $id);
+        $ok = $stmt->execute();
+        $ok = $ok && ($stmt->rowCount() > 0);
+        return $ok;
     }
     public static function delete2($idEtab,$idTypeChambre) {
         $ok = false;
-        $requete = "DELETE * FROM Offre WHERE idEtab = :idEtab AND idTypeChambre = :idTypeChambre";
+        $requete = "DELETE FROM Offre WHERE idEtab = :idEtab AND idTypeChambre = :idTypeChambre";
         $stmt = Bdd::getPdo()->prepare($requete);
         $stmt->bindParam(':idEtab', $idEtab);
         $stmt->bindParam(':idTypeChambre', $idTypeChambre);
