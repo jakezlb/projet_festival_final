@@ -16,15 +16,13 @@
 {
    /* Fond sable (c'est la couleur de fond de l'onglet ouvert) 
    Ce fond sera recouvert par un fond ocre pour les onglets fermés */
-   background-color:lightcyan;
+   background-color:#2F4F4F;
    /* Couleur rouge */
-   color:black;
+   color:#5F9EA0;
    float:left;
    margin:0px 0px 0px 0px;
    /* Bordure blanche */
-   border:solid 2px white;
-   font-size: medium;
-   text-shadow: 1px 1px black;
+   border:solid 2px black;
    /* Logiquement, le pourcentage devrait être égal à 100/nombre d'onglets 
    mais les bordures prennent de la place ; il faut donc réduire à 18% 
    certains navigateurs n'acceptent pas les nombres réels donc on met
@@ -51,18 +49,15 @@
    border-bottom:solid 2px black;
    border-left:solid 2px black;
    width:20%;
-   font-size: medium;
 }
 
 /* Style de l'onglet non ouvert cas 1er onglet */
 .menus .ongletPrem 
 { 
    /* Fond ocre */
-   background-color:lightskyblue;
+   background-color:#2F4F4F;
    /* Couleur rouge */
-   color:#F50033;
-   font-size: medium;
-   text-shadow: 1px 1px black;
+   color:white;
    margin:0px 0px 0px 0px;
 }
 
@@ -70,10 +65,9 @@
 .menus .ongletPrem a 
 { 
    /* Fond ocre */
+   background-color:#2F4F4F;
    /* Couleur rouge */
    color:white;
-   text-shadow: 1px 1px black;
-   font-size: medium;
    /* Pas de soulignement du lien */
    text-decoration:none;
 }
@@ -82,13 +76,10 @@
 .menus .onglet 
 { 
    /* Fond ocre */
-   background-color:lightskyblue;
+   background-color:#2F4F4F;
    /* Couleur rouge */
    color:white;
-   font-style: bold;
    margin:0px 0px 0px 0px;
-   font-size: medium;
-   text-shadow: 1px 1px black;
    /* Effacement du trait de gauche (pour cela, on le met de la même couleur que 
    le fond de l'onglet) */
    border-left:solid 2px black;
@@ -98,12 +89,9 @@
 .menus .onglet a 
 { 
    /* Fond ocre */
-   background-color:lightskyblue;
+   background-color:#2F4F4F;
    /* Couleur rouge */
    color:white;
-   font-size: medium;
    /* Pas de soulignement du lien */
    text-decoration:none; 
 }
-
-

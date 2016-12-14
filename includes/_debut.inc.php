@@ -7,7 +7,7 @@
         <link href="css/cssGeneral.css" rel="stylesheet" type="text/css">
         <link href="css/cssOnglets.css" rel="stylesheet" type="text/css">
         <!-- logo du site -->
-        <link rel="icon" type="image/png" href="./images/noto.jpg" />
+        <link rel="icon" type="image/png" href="./images/logo.jpg" />
         <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="./images/logo.png" /><![endif]-->
     </head>
     <body class='basePage'>
@@ -15,7 +15,8 @@
         <table width="100%" cellpadding="0" cellspacing="0">
             <!-- Titre -->
             <tr> 
-                <td class="titre">Festival Folklores du Monde <img class="circle" src="./images/note.png" align="right" width="75" height="75"><br>
+                <td class="titre">Festival Folklores du Monde <img class="circle" src="./images/note.png" align="left" width="75" height="75">
+				<img class="circle" src="./images/note.png" align="right" width="75" height="75"><br>
                     <span id="texteNiveau2" class="texteNiveau2">
                         H&eacute;bergement des groupes</span><br>&nbsp;
        

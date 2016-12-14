@@ -40,16 +40,11 @@
 {
     padding-top: 20px;
     text-shadow: 1px 1px black;
-    color:whitesmoke;
+    color:white;
     text-align: center;
-    font:30px Arial, Helvetica, sans-serif;
+    font:40px Arial, Helvetica, sans-serif;
     border-bottom: black 2px solid;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+18,2989d8+50,1e5799+80,1e5799+80,1e5799+80&0+0,0.8+15,1+28,1+67,0.8+85,0+100 */
-    background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,0.85) 18%, rgba(33,103,173,1) 28%, rgba(41,137,216,1) 50%, rgba(35,109,180,1) 67%, rgba(30,87,153,0.86) 80%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,0.85) 18%,rgba(33,103,173,1) 28%,rgba(41,137,216,1) 50%,rgba(35,109,180,1) 67%,rgba(30,87,153,0.86) 80%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,0.85) 18%,rgba(33,103,173,1) 28%,rgba(41,137,216,1) 50%,rgba(35,109,180,1) 67%,rgba(30,87,153,0.86) 80%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=0 ); /* IE6-9 */
-
+	background-color: #2F4F4F;
 }
 
 /* Style pour le texte de 2ème niveau du titre */
@@ -63,8 +58,8 @@ mise en gras et en italique) */
 .texteAccueil
 {
     background-color:white;
-    color:#000099;       
-    font:14px Georgia, "Times New Roman", Times, serif;
+    color:#2F4F4F;       
+    font:15px Arial, Helvetica, sans-serif;
     font-weight:bold;
     font-style:italic;
     text-align:left;
@@ -94,7 +89,7 @@ de jaune */
 tr.enTeteTabQuad 
 {
     border-top: 1px solid #777;
-    background-color:lightskyblue;
+    background-color:#2F4F4F;
     color:black;
     height:21px;
     text-align:center;
@@ -103,7 +98,7 @@ tr.enTeteTabQuad
 /* 2ème style pour les en-têtes des tableaux quadrillés : fond jaune */
 tr.enTete2TabQuad 
 {
-    background-color:#FFFFC0;
+    background-color:#5F9EA0;
     color:black;
     text-align:left;
 } 
@@ -134,7 +129,7 @@ table.tabNonQuadrille
 nuances de jaune et trait bas pour séparer l'en-tête du corps du tableau */
 tr.enTeteTabNonQuad td
 {
-    background-color:lightskyblue;
+    background-color:#2F4F4F;
     color:black;
     height:21px;
     text-align:center;
@@ -159,7 +154,7 @@ tr.ligneTabNonQuad td
 /* Style pour les messages d'erreur affichés en bas de page (couleur : bleu) */
 .msgErreur
 {
-    background-color:#FFDD88;
+    background-color:#2F4F4F;
     color:#3366CC;
     font-size:14px;
 }
@@ -177,7 +172,7 @@ tr.ligneTabNonQuad td
 /* Fond gris */
 td.absenceOffre
 {
-    background-color:#EEEEEE;
+    background-color:#2F4F4F;
     color:black;
     width:30px;
     text-align:center;
@@ -186,7 +181,7 @@ td.absenceOffre
 /* Fond blanc */
 td.reserveSiLien
 {
-    background-color:#FFFFFF;
+    background-color:#2F4F4F;
     color:black;
     width:30px;
     text-align:center;
@@ -195,7 +190,7 @@ td.reserveSiLien
 /* Fond jaune */
 td.reserve
 {
-    background-color:#FFFF80;
+    background-color:#2F4F4F;
     color:black;
     width:30px;
     text-align:center;
@@ -204,7 +199,7 @@ td.reserve
 /* Fond vert */
 td.libre
 {
-    background-color:#99FFCC;
+    background-color:#2F4F4F;
     color:black;
     width:30px;
     text-align:center;
