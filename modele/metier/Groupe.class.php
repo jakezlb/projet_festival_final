@@ -52,59 +52,118 @@ class Groupe {
         $this->nomPays = $nomPays;
         $this->hebergement = $hebergement;
     }
-
+    
+    //ACCESSEURS
+    
+    /**
+     * 
+     * @return id
+     */
     function getId() {
         return $this->id;
     }
-
+    /**
+     * 
+     * @return nom
+     */
     function getNom() {
         return $this->nom;
     }
-
+    
+    /**
+     * 
+     * @return identite
+     */
     function getIdentite() {
         return $this->identite;
     }
-
+    
+    /**
+     * 
+     * @return adresse
+     */
     function getAdresse() {
         return $this->adresse;
     }
-
+    
+    /**
+     * 
+     * @return nbPers
+     */
     function getNbPers() {
         return $this->nbPers;
     }
-
+    
+    /**
+     * 
+     * @return nomPays
+     */
     function getNomPays() {
         return $this->nomPays;
     }
 
+    /**
+     * 
+     * @return hebergement
+     */
     function getHebergement() {
         return $this->hebergement;
     }
 
+    //MUTATEURS
+    
+    /**
+     * 
+     * @param type $id
+     */
     function setId($id) {
         $this->id = $id;
     }
-
+    
+    /**
+     * 
+     * @param type $nom
+     */
     function setNom($nom) {
         $this->nom = $nom;
     }
 
+    /**
+     * 
+     * @param type $identite
+     */
     function setIdentite($identite) {
         $this->identite = $identite;
     }
 
+    /**
+     * 
+     * @param type $adresse
+     */
     function setAdresse($adresse) {
         $this->adresse = $adresse;
     }
 
+    /**
+     * 
+     * @param type $nbPers
+     */
     function setNbPers($nbPers) {
         $this->nbPers = $nbPers;
     }
 
+    /**
+     * 
+     * @param type $nomPays
+     */
     function setNomPays($nomPays) {
         $this->nomPays = $nomPays;
     }
 
+    /**
+     * 
+     * @param type $hebergement
+     */
     function setHebergement($hebergement) {
         $this->hebergement = $hebergement;
     }
